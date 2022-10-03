@@ -29,12 +29,17 @@ body{
 }
 
 main{
-    text-indent: 10%;
-    width: 80%;
-    
+    text-indent: 5%;
+    width: 80%;    
 }
+
 #neu-logo{
     max-width: 220px;
+}
+.About-me, .education, .work-experience, .projects{
+    border: 2px dashed;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 header a:last-of-type{
