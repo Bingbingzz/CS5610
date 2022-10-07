@@ -1,0 +1,90 @@
+
+header.page-header{
+    background-color: rosybrown;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    height: 30px;   
+}
+
+
+a:hover{
+    color: crimson
+}
+
+a:visited {
+    color: darkmagenta;
+  }
+
+nav{
+    text-align: center;
+}
+
+body{
+    background-image: url(../images/purplesnow.png);
+    background-size: 600px 500px;
+    font-family: 'Roboto', sans-serif;
+}
+
+main{
+    text-indent: 5%;
+    width: 80%;    
+}
+
+#neu-logo{
+    max-width: 220px;
+}
+.About-me, .education, .work-experience, .projects{
+    border: 2px dashed;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+header a:last-of-type{
+    margin-left: 20px
+}
+
+li::first-line{
+    font-weight: bold;
+}
+
+.course-plan{
+    text-align: left;
+}
+
+figure {
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 220px;
+    margin: auto;
+}
+
+
+figcaption {
+    background-color: rosybrown;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+.footer-table{
+    border-spacing: 20px;
+    padding-left: 500px;
+    text-align: center;
+}
+
+.footer-logo{
+    width: 26px;
+    height: 26px;
+}
+
+
+.copyright{
+    text-align: center;
+}
+
+
