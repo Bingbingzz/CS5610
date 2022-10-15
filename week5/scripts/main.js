@@ -22,7 +22,7 @@
 
 let shoppingListElement = document.querySelector(".shopping");
 
-let shoppingItems = ["Banana", "Ice cream", "Oat milk", "Free Run Eggs"]
+let shoppingItems = ["Banana", "Ice cream", "Oat milk", "Free Run Eggs", "Green Tea"]
 
 function populateList(arr){
     for(let item of arr){
@@ -41,3 +41,21 @@ function squareListItems(){
 }
 
 squareListItems();
+
+function greenItems() {
+    let listItems = document.querySelectorAll(".shopping li");
+//     listItems.forEach((item) => {
+//       if (item.innerText.includes("green")) {
+//         item.classList.add("greenText");
+//       }
+//     });
+    for (let item of listItems) {
+    // if (item.innerText.indexOf("green") != -1)
+    if (item.innerText.includes("Green")) {
+        // console.log(item);
+        item.classList.add("greenText");
+        }
+    }
+  }
+  
+  greenItems();
