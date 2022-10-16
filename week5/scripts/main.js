@@ -59,3 +59,17 @@ function greenItems() {
   }
   
   greenItems();
+
+  let clickButton = document.querySelector("#updateImage");
+  clickButton.addEventListener("click", changeButtonText);
+
+  function changeButtonText(){
+    if (clickButton.innerText === "Click me!"){
+        clickButton.innerText = "Clicked!";
+
+    }else{
+        clickButton.innerText = "Click me!";
+    }
+    
+
+  }
