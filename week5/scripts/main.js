@@ -70,6 +70,17 @@ function greenItems() {
     }else{
         clickButton.innerText = "Click me!";
     }
-    
-
   }
+
+  let shoppingCartImage = document.querySelector("#shoppingCart");
+  clickButton.addEventListener("click", updateImage, {once: true});
+
+  function updateImage(){
+    // console.log("image update once");
+    shoppingCartImage.src = "images/shoppingCart.png";
+    shoppingCartImage.alt = "shopping cart";
+    shoppingCartImage.width = 50;
+    shoppingCartImage.height = 50;
+    // clickButton.removeEventListener("click", updateImage);
+  }
+
