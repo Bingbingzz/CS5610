@@ -24,6 +24,15 @@ let shoppingListElement = document.querySelector(".shopping");
 
 let shoppingItems = ["Banana", "Ice cream", "Oat milk", "Free Run Eggs", "Green Tea"]
 
+shoppingListElement.addEventListener("click", strikeThrough);
+
+function strikeThrough(event){
+    event.target.innerHTML = `<del>${event.target.innerText}</del>`
+
+
+}
+
+
 function populateList(arr){
     for(let item of arr){
         let listItem = document.createElement("li");
@@ -56,31 +65,44 @@ function greenItems() {
         item.classList.add("greenText");
         }
     }
-  }
+}
   
-  greenItems();
+greenItems();
 
-  let clickButton = document.querySelector("#updateImage");
-  clickButton.addEventListener("click", changeButtonText);
+let clickButton = document.querySelector("#updateImage");
+clickButton.addEventListener("click", changeButtonText);
 
-  function changeButtonText(){
-    if (clickButton.innerText === "Click me!"){
-        clickButton.innerText = "Clicked!";
+function changeButtonText(){
+if (clickButton.innerText === "Click me!"){
+    clickButton.innerText = "Clicked!";
 
-    }else{
-        clickButton.innerText = "Click me!";
+}else{
+    clickButton.innerText = "Click me!";
     }
-  }
+}
 
-  let shoppingCartImage = document.querySelector("#shoppingCart");
-  clickButton.addEventListener("click", updateImage, {once: true});
+let shoppingCartImage = document.querySelector("#shoppingCart");
+clickButton.addEventListener("click", updateImage, {once: true});
 
-  function updateImage(){
-    // console.log("image update once");
-    shoppingCartImage.src = "images/shoppingCart.png";
-    shoppingCartImage.alt = "shopping cart";
-    shoppingCartImage.width = 50;
-    shoppingCartImage.height = 50;
-    // clickButton.removeEventListener("click", updateImage);
-  }
+function updateImage(){
+// console.log("image update once");
+shoppingCartImage.src = "images/shoppingCart.png";
+shoppingCartImage.alt = "shopping cart";
+shoppingCartImage.width = 50;
+shoppingCartImage.height = 50;
+// clickButton.removeEventListener("click", updateImage);
+}
+
+let buttonContainer = document.querySelector("#buttonContainer");
+// let buttons = document.querySelectorAll("img ~ button");
+// console.log(buttons);
+buttonContainer.addEventListener("mouseover", changeButtonBGColor);
+// for (let button of buttons){
+//     button.addEventListener("mouseover", changeButtonBGColor);
+// }
+
+function changeButtonBGColor(event){
+    // console.log(event.target);
+    event.target.style.backgroundColor = event.target.innerText;
+}
 
