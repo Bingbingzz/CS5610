@@ -22,7 +22,6 @@
     top:10px;
     text-align: right;
     cursor: move;
-    position: fixed;
     /* border: 2px solid #4CAF50; */
     background-color: inherit;
     right: 10px;
@@ -45,6 +44,20 @@
     box-sizing: border-box;   
 }
 
+#radioButton{
+    display: flex;
+    padding: 20px;
+}
+
+/* #buttonSubmit{
+    display: flex;
+} */
+
+
+
+/* .fieldset{
+    display: flex;
+} */
 
 a:hover{
     color: crimson

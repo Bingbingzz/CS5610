@@ -20,8 +20,10 @@
         <a href="hobbies.html">hobbies</a>  
     </header>
     <main>   
-        <button id = "buttonBG" onclick="changeBGStyle()">dark mode</button>  
-        <a href="javascript:void(0)" class="bar-toggle">toggle and save state</a>
+        <button id = "buttonBG" onclick="changeBGStyle()">dark mode</button> 
+        
+        <!-- toggle and save state -->
+        <a href="javascript:void(0)" class="bar-toggle"></a>
         <div id = "myDiv">
             <a href="https://www.northeastern.edu/"><img id="neu-logo" src="images/Northeastern-University-Logo.png" alt="logo northeastern University"></a>
             <figure class="fig-1">
@@ -29,6 +31,24 @@
                 alt="Lydia Zhao profile picture">
                 <figcaption>Lydia Zhao</figcaption>
             </figure>
+
+            <form>
+                <legend>Get the current date or time: </legend>
+                <div id="radioButton">
+                    <input type="radio" id="date" name="date" value="date">
+                    <label for="date">Date</label><br>
+                    <input type="radio" id="time" name="time" value="time">
+                    <label for="time">Time</label><br>    
+                </div>
+
+                <div>
+                    <button id = "buttonSubmit">submit</button>
+                </div>
+
+            </form>
+            <pre id="log"></pre>
+            
+           
             
             <section class ="About-me">
                 <h2>About me</h2>
