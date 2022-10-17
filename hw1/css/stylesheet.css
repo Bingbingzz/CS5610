@@ -17,12 +17,15 @@
     color: white;
   }
 
+#buttonSubmit{
+    background-color: rosybrown;
+}
+
 #buttonBG{
     position: fixed;
     top:10px;
     text-align: right;
     cursor: move;
-    /* border: 2px solid #4CAF50; */
     background-color: inherit;
     right: 10px;
     font-size: 10px;
@@ -49,16 +52,6 @@
     padding: 20px;
 }
 
-/* #buttonSubmit{
-    display: flex;
-} */
-
-
-
-/* .fieldset{
-    display: flex;
-} */
-
 a:hover{
     color: crimson
 }
@@ -66,8 +59,6 @@ a:hover{
 a:visited {
     color: darkmagenta;
   }
-
-
 
 body{
     background-image: url(../images/purplesnow.png);
