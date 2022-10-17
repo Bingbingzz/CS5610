@@ -1,14 +1,56 @@
 
-header.page-header{
+
+#navbar{
     background-color: rosybrown;
-    align-items: center;
-    display: flex;
     margin: 0;
     top: 0;
     width: 100%;
     height: 30px;   
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+
 }
 
+#buttonBG:hover {
+    background-color: #865785; 
+    color: white;
+  }
+
+#buttonSubmit{
+    background-color: rosybrown;
+}
+
+#buttonBG{
+    position: fixed;
+    top:10px;
+    text-align: right;
+    cursor: move;
+    background-color: inherit;
+    right: 10px;
+    font-size: 10px;
+}
+
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.myStyle{
+    width: 100%;
+    padding: 25px;
+    background-color: rgb(9, 8, 7);
+    color: white;
+    font-size: 15px;
+    box-sizing: border-box;   
+}
+
+#radioButton{
+    display: flex;
+    padding: 20px;
+}
 
 a:hover{
     color: crimson
@@ -17,10 +59,6 @@ a:hover{
 a:visited {
     color: darkmagenta;
   }
-
-nav{
-    text-align: center;
-}
 
 body{
     background-image: url(../images/purplesnow.png);
