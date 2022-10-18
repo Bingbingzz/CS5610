@@ -1,0 +1,11 @@
+{
+  "name": "week6",
+  "version": "1.0.0",
+  "description": "This is a week 6 practice for nodeJs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lydia",
+  "license": "ISC"
+}
