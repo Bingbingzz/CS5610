@@ -3,7 +3,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-const _ = require("lodash");
+// const _ = require("lodash");
+const mongoose = require("mongoose");
 
 
 
@@ -18,15 +19,49 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-//Global variable post to store the post content
-let posts = [];
+// mongoose.connect("mongodb://localhost:27017/blogDB", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://admin-lydia:Test123@freecluster.s9rhmpu.mongodb.net/blogDB", {useNewUrlParser: true});
+
+const postSchema = {
+  title: String,
+  content: String
+};
+const Post = mongoose.model("Post", postSchema);
+
+
+
+const post1 = new Post({
+  title: "The birth of puppy Simon🐶",
+  content: "The birthday of my pet dog Simon is 15th November 2017. He is a Shiba Inu. I decide to treat him as my family member."
+});
+
+const post2 = new Post({
+  title: "The first day with Simon🦴",
+  content: "When he was 4 month old, I pick him to my home. He is really cute and smart."
+});
+
+const defaultPosts = [post1, post2];
 
 
 app.get("/", function(req,res){
-  res.render("home", {
-    startingContent: homeStartingContent,
-    posts: posts
+  Post.find({}, function(err, posts){
+    if(posts.length === 0){
+      Post.insertMany(defaultPosts, function(err){
+        if (err){
+          console.log(err);
+        }else{
+          console.log("Successfully saved default database!")
+        }
+      });
+      res.redirect("/");
+    }else{
+      res.render("home", {
+        startingContent: homeStartingContent,
+        posts: posts
+        });
+    }
   });
+
 
 });
 
@@ -47,27 +82,46 @@ app.get("/compose", function(req, res) {
 
 
 app.post("/compose", function(req, res){
-  const post = {
+  const post = new Post({
     title: req.body.postTitle,
     content: req.body.postBody
-  };
-  posts.push(post);
-  res.redirect("/");
-});
+  });
 
-app.get("/posts/:postName", function(req, res){
-  const requestedTitle = _.lowerCase(req.params.postName);
-  posts.forEach(function(post){
-    const storedTitle = _.lowerCase(post.title);
-    if (storedTitle === requestedTitle){
-      res.render("post",{
-        title: post.title,
-        content: post.content
-      });
+  post.save(function(err){
+    if (!err){
+      res.redirect("/");
     }
   })
-})
+});
 
+
+app.get("/posts/:postId", function(req, res){
+
+const requestedPostId = req.params.postId;
+
+  Post.findOne({_id: requestedPostId}, function(err, post){
+    res.render("post", {
+      title: post.title,
+      content: post.content
+    });
+  });
+
+});
+
+
+// app.get("/posts/:postName", function(req, res){
+//   const requestedTitle = _.lowerCase(req.params.postName);
+//   posts.forEach(function(post){
+//     const storedTitle = _.lowerCase(post.title);
+//     if (storedTitle === requestedTitle){
+//       res.render("post",{
+//         title: post.title,
+//         content: post.content
+//       });
+//     }
+//   })
+// })
+//
 
 
 
