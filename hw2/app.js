@@ -106,8 +106,6 @@ const requestedPostId = req.params.postId;
 
 });
 
-
-
 app.post("/delete",function(req, res){
   const deleteId = req.params.postId
   Post.findByIdAndDelete(deleteId, function(err, post){ 
