@@ -109,6 +109,19 @@ const requestedPostId = req.params.postId;
 });
 
 
+// app.post("posts/:postId",function(req, res){
+//   const deleteId = req.params.postId
+//
+//   Post.findOneAndRemove({deleteId},function(err, post){
+//     post.save(function(err){
+//       if (!err){
+//         res.redirect("/");
+//       }
+//     });
+//   });
+// });
+
+
 // app.get("/posts/:postName", function(req, res){
 //   const requestedTitle = _.lowerCase(req.params.postName);
 //   posts.forEach(function(post){
