@@ -1,11 +1,8 @@
 <%- include("partials/header"); -%>
 <h1><%= title %></h1>
-<p><%= content%></p>
-
-<form class="modify" action="/" method="post">
-  <button name="edit">Edit Blog</button>
-  <button name="delete">Delete Blog</button>
+<form class = "edit" action="/delete" method="post">
+  <button type="submit" name = "delete" calss = "delete-blog">Delete</button>
 </form>
-
-
+<p><%= content%></p>
+<a href="/">Update</a>
 <%- include("partials/footer"); -%>
