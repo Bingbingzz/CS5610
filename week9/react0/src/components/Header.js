@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header(name){
+export default function Header({name}){
     console.log(name);
     return(
         <header className="headerContainer">
