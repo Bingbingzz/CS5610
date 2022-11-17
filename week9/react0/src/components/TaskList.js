@@ -20,18 +20,33 @@ export default function TaskList(){
             },
         ]);
 
-
     const deletePressed = (deletID) =>{
         console.log("pressed",deletID);
+        const result = tasks.filter((item)=>{
+            return item.id!==deletID
+        });
+        setTasks(result);    
+    };
+    // {tasks.length === 0 ?(
+    //     <li>No task left</li>
+    // ):(
+        
+    // )
+    // }
 
-    }
-    
-    
-    return(
-        <>
-            {tasks.map((item)=>{
-                return <Task key={item.id}  task={item} deleteHandler={deletePressed}/>;  
-            })}
-        </>
-    );      
+    // return(
+    //     <>
+    //         {tasks.map((item)=>{
+    //             return <Task key={item.id}  task={item} deleteHandler={deletePressed}/>;  
+    //         })}
+    //     </>
+    // );      
+
+    return tasks.length === 0?(
+        <li>No tasks left</li>
+    ) : (
+        tasks.map((item) =>(
+            <Task key={item.id} task={item} deleteHandler={deletePressed} />
+    ))
+    );
 }
